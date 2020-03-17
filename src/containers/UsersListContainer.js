@@ -6,8 +6,8 @@ class UsersListContainer extends React.Component{
         return(
             <div>
                 Users List
-                {this.props.users ? this.props.users.map(user => {
-                    return <UserListItem user={user} />
+                {this.props.users ? this.props.users.map((user, index) => {
+                    return <UserListItem key={user.email} user={user} index={index + 1} getUserInfo={this.props.getUserInfo}/>
                 }) : null}
             </div>
         )
