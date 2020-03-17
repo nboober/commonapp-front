@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import UsersContainer from './containers/UsersListContainer'
 import UserInfo from './components/UserInfo'
@@ -31,11 +32,15 @@ class App extends React.Component{
 
   render(){
     return(
-      <div>
-        <NavBar/>
-        <UsersContainer users={this.state.users} getUserInfo={this.getUserInfo}/>
-        <UserInfo info={this.state.selectUserInfo} />
-      </div>
+      <Switch>
+        <div>
+          <NavBar/>
+          <Route exact path="/">
+            <UsersContainer users={this.state.users} getUserInfo={this.getUserInfo}/>
+            <UserInfo info={this.state.selectUserInfo} />
+          </Route>
+        </div>
+      </Switch>
     )
   }
 }
