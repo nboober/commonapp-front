@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
+import Home from './components/Home'
 import UsersContainer from './containers/UsersListContainer'
 import UserInfo from './components/UserInfo'
 import './App.css';
@@ -35,9 +36,16 @@ class App extends React.Component{
       <Switch>
         <div>
           <NavBar/>
+
           <Route exact path="/">
-            <UsersContainer users={this.state.users} getUserInfo={this.getUserInfo}/>
-            <UserInfo info={this.state.selectUserInfo} />
+            <Home/>
+          </Route>
+
+          <Route exact path="/users">
+            <div className="row">
+              <UsersContainer users={this.state.users} getUserInfo={this.getUserInfo}/>
+              <UserInfo info={this.state.selectUserInfo} />
+            </div>
           </Route>
         </div>
       </Switch>
