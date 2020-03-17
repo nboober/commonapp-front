@@ -1,5 +1,13 @@
 .center{
     text-align: center;
     vertical-align: middle;
-    line-height: 90px;  
+    line-height: 500px;  
+}
+
+.row{
+    width:100%;
+}
+
+.row > *{
+    margin: 11% auto 0 auto;
 }
