@@ -18,7 +18,7 @@ class App extends React.Component{
     .then(respsonse => respsonse.json())
     .then(usersArray => {
       this.setState({
-        users: usersArray
+        users: usersArray.sort((a,b) => (a.last > b.last) ? 1 : -1)
       })
     })
   }

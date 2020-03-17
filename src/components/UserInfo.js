@@ -2,19 +2,20 @@ import React from 'react'
 
 class UserInfo extends React.Component{
     render(){
-        this.props.info ? console.log(this.props.info.phone.phone.toString()) : console.log("hello")
-        return(
-            
+        return(      
+            <>    
+            <h2>User Detail</h2>  
             <div>
-                <h2>First Name</h2>
+                <h4>First Name</h4>
                 <p>{this.props.info.first}</p>
-                <h2>Last Name</h2>
+                <h4>Last Name</h4>
                 <p>{this.props.info.last}</p>
-                <h2>Email</h2>
+                <h4>Email</h4>
                 <p>{this.props.info.email}</p>
-                <h2>Phone Number</h2>
+                <h4>Phone Number</h4>
                 <p>{this.props.info ? this.props.info.phone.phone.toString() : null}</p>
             </div>
+            </>
         )
     }
 }
